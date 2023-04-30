@@ -1,0 +1,23 @@
+int pot=A0;
+int Buz=13;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(pot,INPUT);
+  pinMode(Buz,OUTPUT);
+  Serial. begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+     Potval=analogRead(pot);
+     Buzval=map(analogValue, 0, 1023, 0, 255); 
+     if(Buzval>100){
+      digitalWrite(Buz,HIGH);
+     }else{
+      digitalWrite(Buz,LOW); 
+     }
+      print("------------potentio val-----------");
+      println(Potval);
+      println(Buz);
+     delay(10);
+}
